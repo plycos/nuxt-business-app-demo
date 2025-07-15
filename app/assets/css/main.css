@@ -1,2 +1,12 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+
+@theme {
+    --font-poppins: "Poppins", sans-serif;
+}
+
+@layer base {
+    html {
+        @apply font-poppins leading-relaxed;
+    }
+}
