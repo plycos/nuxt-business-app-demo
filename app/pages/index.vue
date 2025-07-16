@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const helloStore = useHelloStore();
-const { data: _ignore, error, refresh } = await useAsyncData("hello",
+const { error, refresh } = await useAsyncData("hello",
   () => helloStore.getMessage()
 );
 
