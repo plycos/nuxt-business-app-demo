@@ -4,8 +4,7 @@ export const useHelloStore = defineStore("hello", () => {
   async function getMessage() {
     try {
       const data = await $fetch("/api/hello");
-      message.value = data.hello;
-      throw new Error("Simulated Error " + Math.random());
+      message.value = data.message;
       return data;
     } catch (error) {
       throw error;

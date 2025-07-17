@@ -1,6 +1,8 @@
 export default defineEventHandler(async (event) => {
-  const id = crypto.randomUUID();
-  return {
-    hello: "Hello, World! " + id
-  };
+  const config = useRuntimeConfig();
+  type Message = {
+    message: string;
+  }
+  const data: Promise<Message> = $fetch(config.public.apiBase + "/message");
+  return data;
 });
