@@ -6,7 +6,10 @@ WORKDIR /app
 COPY package.json ./
 COPY pnpm-lock.yaml ./
 RUN pnpm install
-COPY . .
+COPY ./app /app/app
+COPY ./public /app/public
+COPY ./server /app/server
+COPY nuxt.config.ts /app/nuxt.config.ts
 RUN pnpm run build
 
 FROM node:22-alpine AS runtime
