@@ -15,5 +15,8 @@ watch(error, () => {
     <p>
       {{ helloStore.message }}
     </p>
+    <p class="text-primary">
+      {{ helloStore.random }}
+    </p>
   </div>
 </template>
